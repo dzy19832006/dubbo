@@ -443,6 +443,7 @@ public class ExtensionLoader<T> {
         }
     }
 
+    //FIXME OPEN 利用代码生成创建一下接口的适配器类
     @SuppressWarnings("unchecked")
     public T getAdaptiveExtension() {
         Object instance = cachedAdaptiveInstance.get();
@@ -469,6 +470,7 @@ public class ExtensionLoader<T> {
         return (T) instance;
     }
 
+    //FIXME OPEN 调试zookeeper，此处抛出异常
     private IllegalStateException findException(String name) {
         for (Map.Entry<String, IllegalStateException> entry : exceptions.entrySet()) {
             if (entry.getKey().toLowerCase().contains(name.toLowerCase())) {
@@ -573,6 +575,7 @@ public class ExtensionLoader<T> {
 	}
 
     // 此方法已经getExtensionClasses方法同步过。
+	//FIXME OPEN 加载所有实现了META-INF/*/目录下文件中的类
     private Map<String, Class<?>> loadExtensionClasses() {
         final SPI defaultAnnotation = type.getAnnotation(SPI.class);
         if(defaultAnnotation != null) {
@@ -739,6 +742,7 @@ public class ExtensionLoader<T> {
         return compiler.compile(code, classLoader);
     }
     
+    //FIXME OPEN 拼接xxx$Adpative类源码
     private String createAdaptiveExtensionClassCode() {
         StringBuilder codeBuidler = new StringBuilder();
         Method[] methods = type.getMethods();

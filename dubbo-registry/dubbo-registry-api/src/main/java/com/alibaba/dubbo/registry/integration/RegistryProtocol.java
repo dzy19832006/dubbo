@@ -234,9 +234,11 @@ public class RegistryProtocol implements Protocol {
         return key;
     }
     
+    //FIXME OPEN 消费端注册(zookeeper注册走该方法)
     @SuppressWarnings("unchecked")
 	public <T> Invoker<T> refer(Class<T> type, URL url) throws RpcException {
         url = url.setProtocol(url.getParameter(Constants.REGISTRY_KEY, Constants.DEFAULT_REGISTRY)).removeParameter(Constants.REGISTRY_KEY);
+        //FIXME OPEN SPI注册 ZookeeperRegistryFactory
         Registry registry = registryFactory.getRegistry(url);
         if (RegistryService.class.equals(type)) {
         	return proxyFactory.getInvoker((T) registry, type, url);

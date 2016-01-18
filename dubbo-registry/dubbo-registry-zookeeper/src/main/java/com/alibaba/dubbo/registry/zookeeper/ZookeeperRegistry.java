@@ -39,6 +39,8 @@ import com.alibaba.dubbo.rpc.RpcException;
  * ZookeeperRegistry
  * 
  * @author william.liangf
+ * 
+ * FIXME OPEN zookeeper注册扩展类
  */
 public class ZookeeperRegistry extends FailbackRegistry {
 
@@ -109,6 +111,7 @@ public class ZookeeperRegistry extends FailbackRegistry {
         }
     }
 
+    //FIXME OPEN 向服务器端发送订阅请求
     protected void doSubscribe(final URL url, final NotifyListener listener) {
         try {
             if (Constants.ANY_VALUE.equals(url.getServiceInterface())) {

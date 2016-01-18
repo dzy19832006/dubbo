@@ -128,6 +128,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
         this.registry = registry;
     }
     
+    //FIXME OPEN zookeeper测试注册，走该方法
     public void subscribe(URL url) {
         setConsumerUrl(url);
         registry.subscribe(url, this);

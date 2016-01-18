@@ -31,6 +31,7 @@ public class FailoverCluster implements Cluster {
 
     public final static String NAME = "failover";
 
+    //FIXME OPEN 生成zookeeper测试 invoker对象
     public <T> Invoker<T> join(Directory<T> directory) throws RpcException {
         return new FailoverClusterInvoker<T>(directory);
     }

@@ -24,6 +24,7 @@ import com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter;
  * ZookeeperRegistryFactory.
  * 
  * @author william.liangf
+ * FIXME OPEN zookeeper注册扩展工厂类
  */
 public class ZookeeperRegistryFactory extends AbstractRegistryFactory {
 	

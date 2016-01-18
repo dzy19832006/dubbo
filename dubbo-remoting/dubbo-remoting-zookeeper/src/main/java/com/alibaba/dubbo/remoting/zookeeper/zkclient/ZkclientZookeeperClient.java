@@ -14,6 +14,7 @@ import com.alibaba.dubbo.remoting.zookeeper.ChildListener;
 import com.alibaba.dubbo.remoting.zookeeper.StateListener;
 import com.alibaba.dubbo.remoting.zookeeper.support.AbstractZookeeperClient;
 
+//FIXME OPEN zkclient封装类
 public class ZkclientZookeeperClient extends AbstractZookeeperClient<IZkChildListener> {
 
 	private final ZkClient client;

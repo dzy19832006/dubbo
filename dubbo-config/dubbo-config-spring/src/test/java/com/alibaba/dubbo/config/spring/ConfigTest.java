@@ -29,6 +29,7 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alibaba.dubbo.common.Constants;
@@ -72,6 +73,24 @@ import junit.framework.Assert;
  * @author william.liangf
  */
 public class ConfigTest {
+	@Autowired
+//	private IEcircle iEcircle;
+	
+	@Test
+    public void testZookeeper() {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/zookeeper.xml");
+        ctx.start();
+        try {
+//            DemoService demoService = refer("dubbo://127.0.0.1:20887");
+//            String hello = demoService.sayName("hello");
+//        	iEcircle.getUploadToken(179, 10, "hash", "123");
+//            assertEquals("welcome:hello", "hello");
+        } catch(Exception e){}
+        finally {
+            ctx.stop();
+            ctx.close();
+        }
+    }
     
     @Test
     public void testSpringExtensionInject() {

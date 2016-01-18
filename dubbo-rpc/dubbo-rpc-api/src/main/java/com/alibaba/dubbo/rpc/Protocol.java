@@ -23,6 +23,7 @@ import com.alibaba.dubbo.common.extension.SPI;
  * Protocol. (API/SPI, Singleton, ThreadSafe)
  * 
  * @author william.liangf
+ * FIXME OPEN 协议接口
  */
 @SPI("dubbo")
 public interface Protocol {
