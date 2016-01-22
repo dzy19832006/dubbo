@@ -470,7 +470,6 @@ public class ExtensionLoader<T> {
         return (T) instance;
     }
 
-    //FIXME OPEN 调试zookeeper，此处抛出异常
     private IllegalStateException findException(String name) {
         for (Map.Entry<String, IllegalStateException> entry : exceptions.entrySet()) {
             if (entry.getKey().toLowerCase().contains(name.toLowerCase())) {

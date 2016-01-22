@@ -210,6 +210,8 @@ public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
         return null;
     }
     
+    //FIXME OPEN 调用远程接口拦截处，其中负责查找负载均衡策略
+    //	FIXME OPEN 调用动态代理类的方法(2)
     public Result invoke(final Invocation invocation) throws RpcException {
 
         checkWheatherDestoried();

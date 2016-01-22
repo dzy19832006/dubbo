@@ -29,6 +29,7 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -81,11 +82,16 @@ public class ConfigTest {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/zookeeper.xml");
         ctx.start();
         try {
+        	com.alibaba.dubbo.config.spring.api.DemoService fb = (com.alibaba.dubbo.config.spring.api.DemoService) ctx.getBean("fb");
+        	System.out.println(fb.sayName("haha"));
+        	
 //            DemoService demoService = refer("dubbo://127.0.0.1:20887");
 //            String hello = demoService.sayName("hello");
 //        	iEcircle.getUploadToken(179, 10, "hash", "123");
 //            assertEquals("welcome:hello", "hello");
-        } catch(Exception e){}
+        } catch(Exception e){
+        	e.printStackTrace();
+        }
         finally {
             ctx.stop();
             ctx.close();
@@ -112,6 +118,12 @@ public class ConfigTest {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/service-class.xml");
         ctx.start();
         try {
+        	try {
+				Thread.currentThread().sleep(11111111111111L);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             DemoService demoService = refer("dubbo://127.0.0.1:20887");
             String hello = demoService.sayName("hello");
             assertEquals("welcome:hello", hello);

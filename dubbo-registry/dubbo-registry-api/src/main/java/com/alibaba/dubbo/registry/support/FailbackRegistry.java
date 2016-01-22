@@ -180,6 +180,7 @@ public abstract class FailbackRegistry extends AbstractRegistry {
         }
     }
 
+    //FIXME OPEN 订阅服务
     @Override
     public void subscribe(URL url, NotifyListener listener) {
         super.subscribe(url, listener);

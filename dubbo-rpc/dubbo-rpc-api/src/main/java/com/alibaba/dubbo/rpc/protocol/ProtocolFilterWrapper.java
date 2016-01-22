@@ -66,6 +66,7 @@ public class ProtocolFilterWrapper implements Protocol {
         protocol.destroy();
     }
 
+    //FIXME OPEN 构造消息发送时的所有filter
     private static <T> Invoker<T> buildInvokerChain(final Invoker<T> invoker, String key, String group) {
         Invoker<T> last = invoker;
         List<Filter> filters = ExtensionLoader.getExtensionLoader(Filter.class).getActivateExtension(invoker.getUrl(), key, group);

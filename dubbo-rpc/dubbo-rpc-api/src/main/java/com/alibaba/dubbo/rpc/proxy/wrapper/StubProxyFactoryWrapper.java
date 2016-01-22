@@ -38,6 +38,8 @@ import com.alibaba.dubbo.rpc.service.GenericService;
  * StubProxyFactoryWrapper
  * 
  * @author william.liangf
+ * 
+ * FIXME OPEN proxyFactoryWrapper
  */
 public class StubProxyFactoryWrapper implements ProxyFactory {
     

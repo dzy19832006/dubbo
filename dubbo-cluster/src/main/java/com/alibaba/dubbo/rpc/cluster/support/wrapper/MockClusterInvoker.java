@@ -33,6 +33,8 @@ import com.alibaba.dubbo.rpc.support.MockInvoker;
 
 /**
  * @author chao.liuc
+ * 
+ * FIXME OPEN cluster包装类，进入cluster的入口
  */
 public class MockClusterInvoker<T> implements Invoker<T>{
 	
@@ -63,6 +65,7 @@ public class MockClusterInvoker<T> implements Invoker<T>{
 		return directory.getInterface();
 	}
 
+//	FIXME OPEN 调用动态代理类的方法(2)
 	public Result invoke(Invocation invocation) throws RpcException {
 		Result result = null;
         

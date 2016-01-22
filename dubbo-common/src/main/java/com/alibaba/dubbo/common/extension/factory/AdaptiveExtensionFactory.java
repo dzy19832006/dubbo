@@ -27,6 +27,8 @@ import com.alibaba.dubbo.common.extension.ExtensionLoader;
  * AdaptiveExtensionFactory
  * 
  * @author william.liangf
+ * 
+ * FIXME OPEN ExtensionLoader类中ExtensionFactory属性值
  */
 @Adaptive
 public class AdaptiveExtensionFactory implements ExtensionFactory {

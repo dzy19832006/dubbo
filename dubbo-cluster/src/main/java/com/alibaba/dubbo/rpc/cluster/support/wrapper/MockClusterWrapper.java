@@ -25,6 +25,7 @@ import com.alibaba.dubbo.rpc.cluster.Directory;
  * 
  * @author chao.liuc
  * 
+ * FIXME OPEN RegistryProtocol的cluster属性
  */
 public class MockClusterWrapper implements Cluster {
 
