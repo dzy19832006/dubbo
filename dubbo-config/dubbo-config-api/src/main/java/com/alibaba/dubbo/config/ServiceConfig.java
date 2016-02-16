@@ -299,6 +299,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         if (NetUtils.isInvalidLocalHost(host)) {
             anyhost = true;
             try {
+            	//FIXME OPEN 获取本机地址
                 host = InetAddress.getLocalHost().getHostAddress();
             } catch (UnknownHostException e) {
                 logger.warn(e.getMessage(), e);

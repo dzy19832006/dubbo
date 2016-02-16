@@ -33,6 +33,7 @@ public abstract class AbstractZookeeperClient<TargetChildListener> implements Zo
 		return url;
 	}
 
+	//FIXME OPEN创建zookeeper上的目录
 	public void create(String path, boolean ephemeral) {
 		int i = path.lastIndexOf('/');
 		if (i > 0) {

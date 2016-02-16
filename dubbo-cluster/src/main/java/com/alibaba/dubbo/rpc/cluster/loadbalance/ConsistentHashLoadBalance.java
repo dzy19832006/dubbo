@@ -33,6 +33,8 @@ import com.alibaba.dubbo.rpc.Invoker;
  * ConsistentHashLoadBalance
  * 
  * @author william.liangf
+ * 
+ * FIXME OPEN 一致性哈希负载均衡器
  */
 public class ConsistentHashLoadBalance extends AbstractLoadBalance {
 
@@ -107,7 +109,7 @@ public class ConsistentHashLoadBalance extends AbstractLoadBalance {
             Invoker<T> invoker;
             Long key = hash;
             if (!virtualInvokers.containsKey(key)) {
-                SortedMap<Long, Invoker<T>> tailMap = virtualInvokers.tailMap(key);
+                SortedMap<Long, Invoker<T>> tailMap = virtualInvokers.tailMap(key);//FIXME OPEN 该方法调用返回此映射，其键大于或等于fromKey的部分视图
                 if (tailMap.isEmpty()) {
                     key = virtualInvokers.firstKey();
                 } else {

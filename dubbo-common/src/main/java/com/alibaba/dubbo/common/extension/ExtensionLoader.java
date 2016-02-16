@@ -531,6 +531,8 @@ public class ExtensionLoader<T> {
                         Class<?> pt = method.getParameterTypes()[0];
                         try {
                             String property = method.getName().length() > 3 ? method.getName().substring(3, 4).toLowerCase() + method.getName().substring(4) : "";
+                            //FIXME OPEN objectFactory-》AdaptiveExtensionFactory
+                            //AdaptiveExtensionFactory包含了SpiExtensionFactory && SpringExtensionFactory
                             Object object = objectFactory.getExtension(pt, property);
                             if (object != null) {
                                 method.invoke(instance, object);

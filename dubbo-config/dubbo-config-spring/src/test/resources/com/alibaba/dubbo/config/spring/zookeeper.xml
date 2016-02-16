@@ -27,5 +27,5 @@
 	<!-- <dubbo:registry address="127.0.0.1:4548" /> -->
 	<dubbo:registry protocol="zookeeper"  client="zkclient" address="zookeeper://zookeeper:2181"/>
 	<!-- <dubbo:annotation package="com.alibaba.dubbo.config.spring.annotation.consumer" version="2.0.0" /> -->
-	<dubbo:reference check="false" init="true" id="fb"  interface="com.alibaba.dubbo.config.spring.api.DemoService" version="1.0"/>
+	<dubbo:reference check="false" init="true" id="fb"  loadbalance="consistenthash" interface="com.alibaba.dubbo.config.spring.api.DemoService" version="1.0"/>
 </beans>

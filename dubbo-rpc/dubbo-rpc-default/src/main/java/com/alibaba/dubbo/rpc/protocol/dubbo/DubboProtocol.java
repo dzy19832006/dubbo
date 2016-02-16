@@ -255,6 +255,7 @@ public class DubboProtocol extends AbstractProtocol {
         return exporter;
     }
     
+    //FIXME OPEN 开启dubbo服务
     private void openServer(URL url) {
         // find server.
         String key = url.getAddress();
@@ -305,6 +306,7 @@ public class DubboProtocol extends AbstractProtocol {
         return invoker;
     }
     
+    //FIXME OPEN 获取通讯客户端对象
     private ExchangeClient[] getClients(URL url){
         //是否共享连接
         boolean service_share_connect = false;

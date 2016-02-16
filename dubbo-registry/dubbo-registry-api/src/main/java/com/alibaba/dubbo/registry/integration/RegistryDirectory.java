@@ -154,6 +154,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
         }
     }
 
+    //FIXME OPEN zookeeper订阅后回调
     public synchronized void notify(List<URL> urls) {
         List<URL> invokerUrls = new ArrayList<URL>();
         List<URL> routerUrls = new ArrayList<URL>();
@@ -576,8 +577,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
     }
 
     public List<Invoker<T>> doList(Invocation invocation) {
-//        if (false) {//FIXME OPEN TEST
-        	if (forbidden) {
+    	if (forbidden) {
             throw new RpcException(RpcException.FORBIDDEN_EXCEPTION, "Forbid consumer " +  NetUtils.getLocalHost() + " access service " + getInterface().getName() + " from registry " + getUrl().getAddress() + " use dubbo version " + Version.getVersion() + ", Please check registry access list (whitelist/blacklist).");
         }
         List<Invoker<T>> invokers = null;
@@ -664,6 +664,8 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
      * @author chao.liuc
      *
      * @param <T>
+     * 
+     * FIXME OPEN 生产invoker代理类
      */
     private static class InvokerDelegete<T> extends InvokerWrapper<T>{
         private URL providerUrl;
