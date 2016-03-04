@@ -32,6 +32,8 @@ import com.alibaba.dubbo.common.utils.NamedThreadFactory;
  * 
  * @see java.util.concurrent.Executors#newFixedThreadPool(int)
  * @author william.liangf
+ * 
+ * FIXME OPEN 此线程池启动时即创建固定大小的线程数
  */
 public class FixedThreadPool implements ThreadPool {
 
